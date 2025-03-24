@@ -4,6 +4,7 @@ import './Country.css';
 const Country = (props) => {
 
     const [currencyCd, setcurrencyCd] = useState('');
+    const [currencyCd2, setcurrencyCd2] = useState('');
 
     useEffect(() => {
         const currencies = props.country.currencies;
@@ -18,6 +19,8 @@ const Country = (props) => {
             })
             if (flg) {
                 setcurrencyCd(strCurrencyCd);
+            } else {
+                setcurrencyCd2(strCurrencyCd);
             }
         }
     }, []);
@@ -30,7 +33,7 @@ const Country = (props) => {
             <a href={props.country.maps.googleMaps} target="_blank">
                 Map
             </a>
-            {currencyCd ? <div className='currencyCd'>Currency Cord: <a href={`/currency-rate/${currencyCd}`}>{currencyCd}</a></div> : ''}
+            {currencyCd ? <div className='currencyCd'>Currency Cord: <a href={`/currency-rate/${currencyCd}`}>{currencyCd}</a></div> : <div className='currencyCd'>Currency Cord: {currencyCd2}</div>}
         </div>
     );
 }

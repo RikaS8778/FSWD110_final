@@ -13,7 +13,8 @@ const CountryCards = () => {
         const fetchRatesAndCountries = async () => {
             try {
                 const ratesResponse = await axios.get('https://api.frankfurter.dev/v1/latest');
-                setRatesList(Object.keys(ratesResponse.data.rates));
+                const rates = Object.keys(ratesResponse.data.rates);
+                setRatesList([...rates, 'EUR']);
 
                 const countriesResponse = await axios.get(`${BASE_URL}/all`);
                 setData(
