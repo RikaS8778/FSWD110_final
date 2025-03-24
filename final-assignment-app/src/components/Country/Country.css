@@ -1,0 +1,16 @@
+.Country {
+  width: 20%;
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid goldenrod;
+  border-radius: 5px;
+}
+
+img {
+  width: 30%;
+  display: inline;
+}
+
+.currencyCd {
+  margin-top: 0.25rem;
+}
